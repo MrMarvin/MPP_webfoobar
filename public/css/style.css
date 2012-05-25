@@ -1,0 +1,14 @@
+html {}
+
+#header				{Border:0;
+				 BACKGROUND-IMAGE: url(../images/header.png); 
+             			 BACKGROUND-REPEAT: no-repeat; 
+				 width:157px; 
+				 height:76px;}
+
+#navigation    			{background:#004b5a;
+				 color:black;
+				 weight:100%;
+				 height:50px;
+				 margin-left:-10px;
+				 margin-right:-10px;}
