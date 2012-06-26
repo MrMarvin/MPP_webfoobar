@@ -1,7 +1,7 @@
 function mainmenu(){
 $(" #menu ul ").css({display: "none"}); // Opera Fix
 $(" #menu li").hover(function(){
-		$(this).find('ul:first').css({visibility: "visible",display: "none"}).show(400);
+		$(this).find('ul:first').css({visibility: "visible",display: "none"}).show();
 		},function(){
 		$(this).find('ul:first').css({visibility: "hidden"});
 		});
@@ -9,6 +9,6 @@ $(" #menu li").hover(function(){
 
  
  
- $(document).ready(function(){					
+ $(document).ready(function(){
 	mainmenu();
 });
