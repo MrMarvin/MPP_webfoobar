@@ -1,14 +1,58 @@
 html {}
 
-#header				{Border:0;
-				 BACKGROUND-IMAGE: url(../images/header.png); 
-             			 BACKGROUND-REPEAT: no-repeat; 
-				 width:157px; 
-				 height:76px;}
+#top{	
+background-image: url(../images/layout/top.png); 
+background-repeat: repeat-x;
+weight:6px;
+height:94px;
+margin-left:-8px;
+margin-right:-8px;
+margin-top:-8px;
+background-color:#004b5a;
+}
+						
+						
+#header{
+border:0;
+background-image: url(../images/layout/header.png); 
+background-repeat: no-repeat; 
+width:200px; 
+height:87px;
+margin-top:-25px;
+margin-left:5px;
+}
+						
+						
+#content{
+height:458px;
+} 		
 
-#navigation    			{background:#004b5a;
-				 color:black;
-				 weight:100%;
-				 height:50px;
-				 margin-left:-10px;
-				 margin-right:-10px;}
+#bottom{
+background-image: url(../images/layout/bottom.png); 
+background-repeat: repeat-x;
+height:92px;
+margin-left:-8px;
+margin-right:-8px;
+margin-bottom:-8px;
+font-family: Calibri, Arial;
+font-size:12px;	
+color:white;
+border:0px;
+}
+						
+table.bottom{
+margin-left:90px;
+border:0px;
+padding-top:10px;
+}	
+
+
+			
+img.none{
+border-top: solid #000000 0px;	
+border-left: solid #000000 0px;
+border-right: solid #000000 0px;
+border-bottom: solid #000000 0px;
+}	
+						
+	
