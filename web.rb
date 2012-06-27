@@ -8,5 +8,5 @@ before do
 end
 
 get "/" do
-  erb :index, :layout => :layout
+  erb :index
 end
