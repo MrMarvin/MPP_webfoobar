@@ -5,50 +5,39 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="rubylearning,ruby,ruby programming,ruby course,sinatra course, mpp, felix, jquery, lernen, IMIS, UNI Lübeck, Herczeg" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/menu.css" />
-   
-   
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.3/themes/smoothness/jquery-ui.css">
+
     <link rel="icon" type="image/ico" href="/images/layout/favicon.ico" />
-    <script type="text/javascript" src="js/jquery-1.2.3.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>    
     <script type="text/javascript" src="js/menu.js"></script>
+    
   </head>
   <body>
     <div id="headerbg"></div>
     <div id="centerbox">
       <div id="top">
+        
+        <div id="header">
+        </div>
+        
+        <div id="cats">
+          <ul>
+            <% index = 0; @cms.pages.each do |name,page| index += 1%>
+              <a href="#<%= name %>" class="catlink"><li class="cattab" style="background-color:<%= page[:color]%>;"><%= name %></li></a>
+            <%end%>
+          </ul>
+        </div>
+      </div> <!-- end of top div-->
 
-        <ul id="menu">
-        <table border="0">
-          <tr>
-          <td><li id="oragneFirst"><a href="#">Home</a></li></td>
-          <td><li id="blueFirst"><a href="#">Link1</a>
-            <ul>
-              <li id="middle"><a href="#">Unterlink1</a></li>
-              <li id="middle"><a href="#">Unterlink2</a></li>
-              <li id="blueLast"><a href="#">Unterlink3</a></li> 
-            </ul>
-          </li></td>
-          <td><li id="greenFirst"><a href="#">Link2</a>
-            <ul>
-              <li id="middle"><a href="#">Unterlink1</a></li>
-              <li id="middle"><a href="#">Unterlink2</a></li>
-              <li id="greenLast"><a href="#">Unterlink3</a></li>      
-            </ul>
-          </li></td>
-          <td><li id="greyFirst"><a href="#">Link3</a>
-            <ul>
-              <li id="middle"><a href="#">Unterlink1</a></li>
-              <li id="middle"><a href="#">Unterlink2</a></li>
-              <li id="greyLast"><a href="#">Unterlink3</a></li>  
-            </ul>
-          </li></td>         
-          </tr>
-       </table>
-       </ul> 
-
-      <div id="header">
-      </div></div>
-      <div id="navigation"> 
+      <div id="pages">
+        <% @cms.pages.each do |name,page| %>
+          <div id="page-<%= name %>" class="page" style="display: none;">
+            <% page[:subpages].each do |subpage| %>
+              <a href="#name/<%= subpage %>"><span class="pagetab"><%= subpage %></span></a>
+            <%end%>
+          </div>
+        <%end%>
       </div>
 
       <div id="content">
@@ -57,23 +46,23 @@
 
       <div id="bottom">
 
-      <table border="0" class="bottom">
+      <table class="bottom">
       <colgroup>
-        <col width="250px">
-        <col width="80px">
-        <col width="200px">
-        <col width="100px">
-        <col width="100px">
-        <col width="100px">	
+        <col style="width:250px;">
+        <col style="width:80px;">
+        <col style="width:200px;">
+        <col style="width:100px;">
+        <col style="width:100px;">
+        <col style="width:100px;">	
       </colgroup>
       <tr>
       <td colspan="3"><b>Webtechnik Group</b></td>
-      <td rowspan="4" align="right" valign="middle">
-        <a href="http://www.rss-verzeichnis.de/" target="_blank"><img  src="/images/layout/rss.png"></a></td>
-      <td rowspan="4" align="center" valign="middle">
-        <a href="http://de-de.facebook.com/" target="_blank"><img src="/images/layout/facebook.png"></a></td>
-      <td rowspan="4" align="left" valign="middle">
-        <a href="https://twitter.com/" target="_blank"><img src="/images/layout/twitter.png"></a></td>
+      <td rowspan="4">
+        <a href="http://www.rss-verzeichnis.de/" target="_blank"><img src="/images/layout/rss.png" alt="RSS feed"></a></td>
+      <td rowspan="4">
+        <a href="http://de-de.facebook.com/" target="_blank"><img src="/images/layout/facebook.png" alt="Facebook.com"></a></td>
+      <td rowspan="4">
+        <a href="https://twitter.com/" target="_blank"><img src="/images/layout/twitter.png" alt="Twitter.com"></a></td>
       </tr>
       <tr>
       <td>Marvin, Florian und Christoph</td>

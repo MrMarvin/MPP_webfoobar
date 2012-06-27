@@ -1,14 +1,14 @@
-function mainmenu(){
-$(" #menu ul ").css({display: "none"}); // Opera Fix
-$(" #menu li").hover(function(){
-		$(this).find('ul:first').css({visibility: "visible",display: "none"}).show();
-		},function(){
-		$(this).find('ul:first').css({visibility: "hidden"});
-		});
+function showPagesPerCat() {
+  $('.catlink').each(function(index) { 
+    $(this).on("click", function() {
+      $('.page').hide();
+      $('#page-'+$(this).attr('href').replace(/^#/g, '')).show();
+      $('#top').css('background-color',$(this).children().eq(0).css('background-color'));
+      $('#headerbg').css('background-color',$(this).children().eq(0).css('background-color'));
+    });
+  });
 }
 
- 
- 
- $(document).ready(function(){
-	mainmenu();
+$(document).ready(function(){
+  showPagesPerCat();
 });
