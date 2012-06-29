@@ -9,6 +9,20 @@ function showPagesPerCat() {
   });
 }
 
+function addJStoPageLinks() {
+  $('div#pages > div > a').each(function(index) { 
+     $(this).on("click", function() {
+       $.ajax({
+         url: $(this).attr('href').replace(/#/g, ''),
+         success: function(data) {
+            $('#content').html(data);
+           }
+       });
+      }); 
+  });
+}
+
 $(document).ready(function(){
   showPagesPerCat();
+  addJStoPageLinks();
 });

@@ -10,3 +10,10 @@ end
 get "/" do
   erb :index
 end
+
+get "/:cat/:page" do
+  cat = params[:cat]
+  page = params[:page]
+  erb (cat+"/"+page).to_sym, :layout => false
+end
+  
