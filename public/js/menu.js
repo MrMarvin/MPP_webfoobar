@@ -22,7 +22,17 @@ function addJStoPageLinks() {
   });
 }
 
+function loadPageFromUrl() {
+  $.ajax({
+    url: $(location).attr('href').replace(/#/g, ''),
+    success: function(data) {
+       $('#content').html(data);
+      }
+  });  
+}
+
 $(document).ready(function(){
   showPagesPerCat();
   addJStoPageLinks();
+  loadPageFromUrl();
 });

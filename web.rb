@@ -12,8 +12,12 @@ get "/" do
 end
 
 get "/:cat/:page" do
-  cat = params[:cat]
-  page = params[:page]
-  erb (cat+"/"+page).to_sym, :layout => false
+  cat = params[:cat].gsub(" ","")
+  page = params[:page].gsub(" ","")
+  if File.exist?("views/"+cat+"/"+page+".erb")
+    erb (cat+"/"+page).to_sym, :layout => false
+  else
+    halt 404, "gibts nicht!"
+  end
+
 end
-  
