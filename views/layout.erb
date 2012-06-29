@@ -34,7 +34,7 @@
         <% @cms.pages.each do |name,page| %>
           <div id="page-<%= name %>" class="page" style="display: none;">
             <% page[:subpages].each do |subpage| %>
-              <a href="#name/<%= subpage %>"><span class="pagetab"><%= subpage %></span></a>
+              <a href="#<%=name%>/<%= subpage %>"><span class="pagetab"><%= subpage %></span></a>
             <%end%>
           </div>
         <%end%>
