@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'sinatra'
+require "sinatra/cookies"
 require './mppcms'
 
 before do
@@ -11,6 +12,16 @@ get "/" do
   erb :index
 end
 
+get "/auth/:token" do
+  puts params[:token]
+  if (params[:token] == "geheim")
+    cookies[:auth] = 'ja, ist ok so'
+    return :ok
+  else
+    halt 403, "nein, falsch!"
+  end    
+end
+
 get "/:cat/:page" do
   cat = params[:cat].gsub(" ","")
   page = params[:page].gsub(" ","")
@@ -19,5 +30,5 @@ get "/:cat/:page" do
   else
     halt 404, "gibts nicht!"
   end
-
 end
+

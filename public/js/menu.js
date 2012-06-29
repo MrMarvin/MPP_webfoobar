@@ -23,12 +23,14 @@ function addJStoPageLinks() {
 }
 
 function loadPageFromUrl() {
-  $.ajax({
-    url: $(location).attr('href').replace(/#/g, ''),
-    success: function(data) {
-       $('#content').html(data);
-      }
-  });  
+  if ($(location).attr('href').indexOf("#") != -1) {
+    $.ajax({
+      url: $(location).attr('href').replace(/#/g, ''),
+      success: function(data) {
+         $('#content').html(data);
+        }
+    });    
+  }
 }
 
 $(document).ready(function(){
