@@ -16,6 +16,7 @@ function addJStoPageLinks() {
          url: $(this).attr('href').replace(/#/g, ''),
          success: function(data) {
             $('#content').html(data);
+            $('#edit-button').show(); 
            }
        });
       }); 
@@ -28,6 +29,7 @@ function loadPageFromUrl() {
       url: $(location).attr('href').replace(/#/g, ''),
       success: function(data) {
          $('#content').html(data);
+          $('#edit-button').show();  
         }
     });    
   }
