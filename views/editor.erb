@@ -1,0 +1,10 @@
+<script type="text/javascript" src="/jquery.wysiwyg.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#wysiwyg').wysiwyg();
+});
+</script>
+
+<form id="edit-form" action="<%= request.fullpath %>" method="post">
+  <input type="submit" value="save" /><br />
+  <textarea id="#wysiwyg" name="source">

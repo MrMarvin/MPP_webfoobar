@@ -42,6 +42,9 @@
         <%end%>
       </div>
 
+      <% if @cms.authorized? cookies[:mppminicmsauth] %>
+        <span id="edit-button" style="width: auto; text-align: center;" onClick="editThisPage();">edit</span>
+      <% end %>
       <div id="content">
         <%= yield %>
       </div>

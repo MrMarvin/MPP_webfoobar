@@ -33,6 +33,20 @@ function loadPageFromUrl() {
   }
 }
 
+function editThisPage() {
+  if ($(location).attr('href').indexOf("#") != -1) {
+    var getposturl = $(location).attr('href').replace(/#/g, 'source/');
+    $.ajax({
+      url: getposturl,
+      success: function(data) {
+         $('#content').html(data);
+        }
+    });
+    $('#edit-button').hide();    
+  }
+}
+
+
 $(document).ready(function(){
   showPagesPerCat();
   addJStoPageLinks();
