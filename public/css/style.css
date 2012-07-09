@@ -3,7 +3,7 @@ body{
   font-size:1em;
   font-family:Calibri, Arial;
   background-color:#ccc;
-  color: white;
+  color: black;
 }
 a:link {color:#fff;}      /* unvisited link */
 a:visited {color:#bbb;}  /* visited link */
